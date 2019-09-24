@@ -31,10 +31,10 @@ Descompriman el archivo `*.zip` en la caperta de `libraries` de su sketchbook (e
 
 Completar la tabla:
 
-| Integrante | github nick |
-|Luis Enrique Guzmán|leguzman|
-|Daniel Caita|dacaitac|
-|Andrés Felipe Forero Caita|afforeroc|
+| Integrante         | github nick |
+|Luis Enrique Guzmán |leguzman     |
+|Daniel Caita        |dacaitac     |
+|Andrés Felipe Forero|afforeroc    |
 
 ## Discusión
 
