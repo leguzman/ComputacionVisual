@@ -1,5 +1,6 @@
 PImage img1, img2, img3, img4;
 //PGraphics pg1, pg2;
+PFont f;
 
 PImage grayScaleBasic(PImage inputImg) {
   PImage outputImg = createImage(inputImg.width, inputImg.height, RGB); // Crea una imagen con el tamaño de inputImg
@@ -75,21 +76,28 @@ PImage blurEffect(PImage inputImg) {
 void setup() {
   size(680, 600); // Tamaño de la ventana principal
   img1 = loadImage("partenon.jpg"); // Carga la imagen base
+  f = createFont("Arial",16,true); // STEP 2 Create Font
+  textFont(f, 12);                  // STEP 3 Specify font to be used
+  fill(0);                         // STEP 4 Specify font color
   noLoop(); // Se ejecuta el programa una sola vez
 }
 
 void draw(){
   g.background(200, 200, 200); // Background gris claro
   image(img1, 20, 20); // Imagen original
+  text("Imagen original", 20, 230);
   
   img2 = grayScaleBasic(img1); // Conversión a escala de grises básico
   image(img2, 240, 20);
+  text("Escala de grises", 240, 230);
 
   img3 = grayScaleLuma(img1); // Conversión a escala de grises Luma
   image(img3, 460, 20);
+  text("Luma", 460, 230);
   
   img4 = blurEffect(img1); // Uso de efecto blur
   image(img4, 20, 240);
+  text("Blur", 20, 450);
   
   /////////////////histograma///////////////777
   int[] hist = new int[256];
