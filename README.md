@@ -2,12 +2,12 @@
 Repositorio público que evidencia los talleres, prácticas y/o proyectos de la asignatura Computación Visual
 
 ## Información de la asignatura
-* Nombre: Computación Visual
-* Docente: Jean Pierre Charalambos Hernandez
-* Lenguajes: Processing
-* Carrera: Ingenieria de Sistemas y Computación
-* Periodo académico: 2019-II
-* Institución: Universidad Nacional de Colombia
+* Nombre: **Computación Visual**
+* Docente: **Jean Pierre Charalambos Hernandez**
+* Lenguajes: **Processing**
+* Carrera: **Ingenieria de Sistemas y Computación**
+* Periodo académico: **2019-II**
+* Institución: **Universidad Nacional de Colombia**
 
 ## Integrantes
 | Integrante           | Github Nick  |
