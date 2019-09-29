@@ -1,6 +1,28 @@
-PImage img1, img2, img3, img4;
+PImage img1, img2, img3, img4, img5, img6, img7;
 //PGraphics pg1, pg2;
 PFont f;
+
+int[][] edge = {
+  {-1, -1, -1},
+  {-1,  8, -1},
+  { 0,  1,  0}
+};
+
+int[][] sharpen = {
+  {-1, -1, -1, -1, -1},
+  {-1,  2,  2,  2, -1},
+  {-1,  2,  8,  2, -1},
+  {-1,  2,  2,  2, -1},
+  {-1, -1, -1, -1, -1},
+};
+
+int[][] emboss = {
+  {-1, -1, -1, -1, 0},
+  {-1, -1, -1,  0, 1},
+  {-1, -1,  0,  1, 1},
+  {-1,  0,  1,  1, 1},
+  { 0,  1,  1,  1, 1}
+};
 
 PImage grayScaleBasic(PImage inputImg) {
   PImage outputImg = createImage(inputImg.width, inputImg.height, RGB); // Crea una imagen con el tamaño de inputImg
@@ -33,12 +55,8 @@ PImage grayScaleLuma(PImage inputImg) {
   return outputImg;
 }
 
-PImage blurEffect(PImage inputImg) {
-  float v = 1.0 / 9.0;
-  float[][] kernel = {{ v, v, v }, 
-                      { v, v, v }, 
-                      { v, v, v }};
-  
+PImage convolution(PImage inputImg, int[][] kernel) {
+   
   // Create an opaque image of the same size as the original
   PImage edgeImg = createImage(inputImg.width, inputImg.height, RGB);
   int rad = kernel.length/2;
@@ -95,42 +113,34 @@ void draw(){
   image(img3, 460, 20);
   text("Luma", 460, 230);
   
-  img4 = blurEffect(img1); // Uso de efecto blur
+  img4 = convolution(img1, edge); // Uso de efecto edge
   image(img4, 20, 240);
   text("Blur", 20, 450);
   
+  img5 = convolution(img1, emboss); // Uso de efecto emboss
+  image(img5, 240, 240);
+  text("Blur", 20, 450);
+  
+  img6 = convolution(img1, sharpen); // Uso de efecto sharpen
+  image(img6, 460, 240);
+  text("Blur", 20, 450);
+  
+   text("Segmentacion", 460, 450);
+  color resaltado=color(0, 255, 255);
   /////////////////histograma///////////////777
   int[] hist = new int[256];
-
   // Calculate the histogram
-  for (int i = 0; i < img1.width; i++) {
-    for (int j = 0; j < img1.height; j++) {
-      int bright = int(brightness(get(i, j)));
-      hist[bright]++; 
+  for (int i = 0; i < img2.width; i++) {
+    for (int j = 0; j < img2.height; j++) {
+      int bright = int(brightness(img2.get(i, j)));
+      hist[bright]++;
+      if(bright>200 )
+        img7.set(i, j, resaltado);
     }
   }
+  image(img7, 460, 240);
+}
 
-  // Find the largest value in the histogram
-  int histMax = max(hist);
-  
-  stroke(255);
-  // Draw half of the histogram (skip every second value)
-  for (int i = 0; i < img1.width; i += 2) {
-    // Map i (from 0..img.width) to a location in the histogram (0..255)
-    int which = int(map(i, 0, img1.width, 0, 255));
-    // Convert the histogram value to a location between 
-    // the bottom and the top of the picture
-    int y = int(map(hist[which], 0, histMax, img1.height, 0));
-    line(i+200, img1.height+300, i+200, y+300);
-  }
-  
-  // Código antiguo
-  /*
-  image(pg, 240, 20); // Posición de la imagen resultante, pg
-  pg.beginDraw(); // Inicia el dibujo
-  pg.background(100); // Background gris
-  pg.stroke(255); // Color del borde
-  pg.line(20, 20, mouseX, mouseY); // Movimiento de la linea con el mouse
-  pg.endDraw();
-  */
+void mouseClicked() {
+  System.out.println(mouseX + " " + mouseY);
 }
