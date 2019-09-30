@@ -1,29 +1,3 @@
-PImage img1, img2, img3, img4, img5, img6, img7;
-//PGraphics pg1, pg2;
-PFont f;
-
-int[][] edge = {
-  {-1, -1, -1},
-  {-1,  8, -1},
-  { 0,  1,  0}
-};
-
-int[][] sharpen = {
-  {-1, -1, -1, -1, -1},
-  {-1,  2,  2,  2, -1},
-  {-1,  2,  8,  2, -1},
-  {-1,  2,  2,  2, -1},
-  {-1, -1, -1, -1, -1},
-};
-
-int[][] emboss = {
-  {-1, -1, -1, -1, 0},
-  {-1, -1, -1,  0, 1},
-  {-1, -1,  0,  1, 1},
-  {-1,  0,  1,  1, 1},
-  { 0,  1,  1,  1, 1}
-};
-
 PImage grayScaleBasic(PImage inputImg) {
   PImage outputImg = createImage(inputImg.width, inputImg.height, RGB); // Crea una imagen con el tamaño de inputImg
   outputImg.loadPixels(); // Carga los píxeles de la imagen en una matriz
@@ -89,58 +63,4 @@ PImage convolution(PImage inputImg, int[][] kernel) {
   // State that there are changes to edgeImg.pixels[]
   edgeImg.updatePixels();
   return edgeImg;
-}
-
-void setup() {
-  size(680, 600); // Tamaño de la ventana principal
-  img1 = loadImage("partenon.jpg"); // Carga la imagen base
-  f = createFont("Arial",16,true); // STEP 2 Create Font
-  textFont(f, 12);                  // STEP 3 Specify font to be used
-  fill(0);                         // STEP 4 Specify font color
-  noLoop(); // Se ejecuta el programa una sola vez
-}
-
-void draw(){
-  g.background(200, 200, 200); // Background gris claro
-  image(img1, 20, 20); // Imagen original
-  text("Imagen original", 20, 230);
-  
-  img2 = grayScaleBasic(img1); // Conversión a escala de grises básico
-  image(img2, 240, 20);
-  text("Escala de grises", 240, 230);
-
-  img3 = grayScaleLuma(img1); // Conversión a escala de grises Luma
-  image(img3, 460, 20);
-  text("Luma", 460, 230);
-  
-  img4 = convolution(img1, edge); // Uso de efecto edge
-  image(img4, 20, 240);
-  text("Blur", 20, 450);
-  
-  img5 = convolution(img1, emboss); // Uso de efecto emboss
-  image(img5, 240, 240);
-  text("Blur", 20, 450);
-  
-  img6 = convolution(img1, sharpen); // Uso de efecto sharpen
-  image(img6, 460, 240);
-  text("Blur", 20, 450);
-  
-   text("Segmentacion", 460, 450);
-  color resaltado=color(0, 255, 255);
-  /////////////////histograma///////////////777
-  int[] hist = new int[256];
-  // Calculate the histogram
-  for (int i = 0; i < img2.width; i++) {
-    for (int j = 0; j < img2.height; j++) {
-      int bright = int(brightness(img2.get(i, j)));
-      hist[bright]++;
-      if(bright>200 )
-        img7.set(i, j, resaltado);
-    }
-  }
-  image(img7, 460, 240);
-}
-
-void mouseClicked() {
-  System.out.println(mouseX + " " + mouseY);
 }
