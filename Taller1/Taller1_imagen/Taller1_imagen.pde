@@ -58,37 +58,50 @@ void draw() {
   line(680, 10, 680, 490);
   calcLim();
   if(state == 2 || state == 3){
-    setIm(x1,x2);
+    setIm(x1,x2, im);
   }   
 }
 
-void setIm(int min, int max){  
-  int resaltado = color(0, 255, 255);
-  int m = min(min, max);
-  int n = max(min, max);  
-  img7 = img;
+void setIm(int min, int max, int fil){
+  float m = min(min, max);
+  float n = max(min, max);
+  float data = 0;
+  int k = 0;
+  img7 = img;  
+  img7.loadPixels();
   for (int i = 0; i < img1.width; i++) {
-    for (int j = 0; j < img1.height; j++) {
-      int data = 0;
-      switch(im){        
-        case 1:
-          data = int(red(img.get(i,j)));
-          if(data >= m && data <= n)
-            img7.set(i, j, resaltado);
+    for (int j = 0; j < img1.height; j++) {      
+      color pix = img.get(i,j);
+      color c = color(255, 255, 255);
+      img7.set(i, j, pix);
+      //img7.pixels[k++] = c;      
+      switch(fil){         //<>//
+        case 1:          
+          data = red(pix);
+          if(data > m && data < n){
+            c = color(255, 0, 0);
+            img7.set(i, j, c);
+          }
         break;
         case 2:
-          data = int(green(img.get(i,j)));
-          if(data > m && data < n)
-            img7.set(i, j, resaltado);
+          data = green(pix);
+          if(data > m && data < n){ //<>//
+            c = color(0, 255, 0);
+            img7.set(i, j, c);
+          }
+            
         break;
-        case 3:
-          data = int(blue(img.get(i,j)));
-          if(data > m && data < n)
-            img7.set(i, j, resaltado);
+        case 3:          
+          data = blue(pix);
+          if(data > m && data < n){
+            c = color(0, 0, 255);
+            img7.set(i, j, c);
+          }
         break;
       }      
     }
   }
+  img7.loadPixels();
   image(img7, 1070, 25); 
   noLoop();
 }
@@ -126,9 +139,10 @@ void calcLim() {
       x1 = int(map(bx - 700, 0, 200, 0, 255));
       text("|", bx, 440);    
       text(pos1, bx-5, 455);
-      x1 = bx;
       
-      if ( mouseX <= 900 && mouseX >= 700 ) {          
+      
+      if ( mouseX <= 900 && mouseX >= 700 ) {   
+        im = 1;
         which = int(map(mouseX - 700, 0, 200, 0, 255));
         pos2 = "" + which;                
         text("|", mouseX, 440);
@@ -136,6 +150,7 @@ void calcLim() {
       }
       
       if( mouseX <= 1120 && mouseX >= 920 ) {
+        im = 2;
         which = int(map(mouseX - 920, 0, 200, 0, 255));
         pos2 = "" + which;                
         text("|", mouseX, 440);
@@ -143,6 +158,7 @@ void calcLim() {
       }
       
       if( mouseX <= 1340 && mouseX >= 1140 ) {
+        im = 3;
         which = int(map(mouseX - 1140, 0, 200, 0, 255));
         pos2 = "" + which;                
         text("|", mouseX, 440);
@@ -153,10 +169,12 @@ void calcLim() {
       text("|", x1, 440);    
       text(pos1, x1-5, 455);
       
-      x2 = int(map(bx - 700, 0, 200, 0, 255));
+      x1 = Integer.parseInt(pos1);
+      x2 = Integer.parseInt(pos2);
+      
       text("|", bx, 440);    
       text(pos2, bx-5, 455);         
-      setIm(x1,x2);
+      setIm(x1,x2,im);
     break;    
     default:
     break;
