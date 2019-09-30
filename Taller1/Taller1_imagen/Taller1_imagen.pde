@@ -38,7 +38,7 @@ void draw() {
 
   img4 = convolution(img1, edge); // Uso de efecto edge
   image(img4, 20, 240);
-  text("Blur", 20, 450);
+  text("Edge", 20, 450);
 
   img5 = convolution(img1, emboss); // Uso de efecto emboss
   image(img5, 240, 240);
@@ -157,9 +157,7 @@ void calcLim() {
       text("|", bx, 440);    
       text(pos2, bx-5, 455);         
       setIm(x1,x2);
-    break;
-    case 3:      
-    break;
+    break;    
     default:
     break;
   }  
