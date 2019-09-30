@@ -38,5 +38,8 @@ Completar la tabla:
 |Andrés Felipe Forero|afforeroc    |
 
 ## Discusión
+Se aplicaron varios filtros tanto a imagen como a video. Se elaboró un histograma para la escala de grises en el caso de la imagen.
+Para la realización de este taller se reutilizo código de ejemplos de histrograma y escala de grises en la pagina de processing:
+https://processing.org/examples/
 
 (describa brevemente las actividades realizadas y los resultados obtenidos)
