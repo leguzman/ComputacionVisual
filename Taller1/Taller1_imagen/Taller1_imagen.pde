@@ -75,7 +75,7 @@ void setIm(int min, int max, int fil){
       color c = color(255, 255, 255);
       img7.set(i, j, pix);
       //img7.pixels[k++] = c;      
-      switch(fil){         //<>//
+      switch(fil){        
         case 1:          
           data = red(pix);
           if(data > m && data < n){
@@ -85,7 +85,7 @@ void setIm(int min, int max, int fil){
         break;
         case 2:
           data = green(pix);
-          if(data > m && data < n){ //<>//
+          if(data > m && data < n){
             c = color(0, 255, 0);
             img7.set(i, j, c);
           }
