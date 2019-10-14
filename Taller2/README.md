@@ -20,24 +20,16 @@ Implementar al menos 6 ilusiones de tres tipos distintos (paradójicas, geométr
 
 ## Discusión
 
-| Ilusión | Categoria | Referencia | Tipo de interactividad (si aplica) | URL código base (si aplica) |
-|----------------|------------|------------|------------------------------------|-----------------------------|
-| circle expands | filling-in |            |                                    |                             |
-|                |            |            |                                    |                             |
-|                |            |            |                                    |                             |
-|                |            |            |                                    |                             |
-|                |            |            |                                    |                             |
-|                |            |            |                                    |                             |
+| Ilusión            | Categoria   | Referencia                                       | Tipo de interactividad (si aplica)        | URL código base (si aplica) |
+|--------------------|------------ |--------------------------------------------------|-------------------------------------------|-----------------------------|
+| circle_expands     | Movimiento  | https://en.wikipedia.org/wiki/Filling-i)         |                -                          |               -             |
+| troxler_fading     | Desvanecido | https://en.wikipedia.org/wiki/Troxler%27s_fading | Con el mouse se puede variar la velocidad |               -             |
+| opacity_illusion_1 | Scrollbar   |                                                  |                                           | https://processing.org/examples/scrollbar.html|
+|                    |             |                                                  |                                           |                             |
+|                    |             |                                                  |                                           |                             |
 
-2. Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar
+2. Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar:
 
 ## Entrega
 
 * Plazo para hacer _push_ del repositorio a github: ~~6/10/19~~ 14/10/19 a las 24h.
-
-## Descripción
-* En el sketch opacity_illusion_1 se usa código modificado del ejemplo Scrollbar en la página de processing:https://processing.org/examples/scrollbar.html
-
-* chaser_spinning
-
-* circle_expands
