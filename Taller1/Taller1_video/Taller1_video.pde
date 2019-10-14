@@ -7,15 +7,20 @@ int Width = 690, Height = 600;
 int[][] edge = {
   {-1, -1, -1},
   {-1,  8, -1},
-  { -1,  -1,  -1}};
-
-int[][] sharpen = {
-  {0, -1 , 0},
-  {-1, 5, -1},
-  {0, -1 , 0}
+  {-1, -1, -1}
 };
 
-int[][] emboss = {{-2,-1,0},{-1,1,1},{0,1,2}};
+int[][] sharpen = {
+  { 0, -1 , 0},
+  {-1,  5, -1},
+  { 0, -1 , 0}
+};
+
+int[][] blur = {
+  { 0,  1,  0},
+  { 1,  2,  1},
+  { 0,  1,  0},
+};
 
 void grayScaleBasic(int posX, int posY){
   loadPixels();
@@ -107,10 +112,13 @@ void draw() {
   convolution(240, 240, sharpen); 
   text("Sharpen", 240, 450);
   
-  image(video, 460, 240, 200, 200); // Convolución Sharpen
-  convolution(460, 240, kernelX); 
-  text("Emboss", 460, 450);
+  image(video, 460, 240, 200, 200); // Convolución Blur
+  convolution(460, 240, blur); 
+  text("Blur", 460, 450);
   
-  String frtxt = "Efficiency "+ frameRate/fr*100 + "%";
-  text(frtxt, 20, 500);
+  String frtxt = "Framerate "+ frameRate;
+  text(frtxt, 20, 480);
+  
+  String efftxt = "Efficiency "+ frameRate/fr*100 + "%";
+  text(efftxt, 20, 500);
 } //<>//
