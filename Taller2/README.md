@@ -22,7 +22,7 @@ Implementar al menos 6 ilusiones de tres tipos distintos (paradójicas, geométr
 
 | Ilusión            | Categoria   | Referencia                                       | Tipo de interactividad (si aplica)        | URL código base (si aplica) |
 |--------------------|------------ |--------------------------------------------------|-------------------------------------------|-----------------------------|
-| circle_expands     | Movimiento  | https://en.wikipedia.org/wiki/Filling-i)         |                -                          |               -             |
+| circle_expands     | Movimiento  | https://en.wikipedia.org/wiki/Filling-in         |                -                          |               -             |
 | troxler_fading     | Desvanecido | https://en.wikipedia.org/wiki/Troxler%27s_fading | Con el mouse se puede variar la velocidad |               -             |
 | opacity_illusion_1 | Scrollbar   |                                                  |                                           | https://processing.org/examples/scrollbar.html|
 |                    |             |                                                  |                                           |                             |
