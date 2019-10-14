@@ -1,6 +1,6 @@
 # ComputacionVisual
 
-# Taller de análisis de imágenes por software
+# Taller 1 - Análisis de imágenes por software
 
 ## Propósito
 
@@ -29,13 +29,11 @@ Descompriman el archivo `*.zip` en la caperta de `libraries` de su sketchbook (e
 
 ## Integrantes
 
-Completar la tabla:
-
-| Integrante         | github nick |
-|--------------------|-------------|
-|Luis Enrique Guzmán |leguzman     |
-|Daniel Caita        |dacaitac     |
-|Andrés Felipe Forero|afforeroc    |
+| Integrante           | Github Nick  |
+|----------------------|--------------|
+| Luis Enrique Guzmán  | [leguzman](https://github.com/leguzman)|
+| Daniel Caita         | [dacaitac](https://github.com/dacaitac)|
+| Andrés Felipe Forero | [afforeroc](https://github.com/afforeroc)|
 
 ## Discusión
 Se aplicaron varios filtros tanto a imagen como a video. Se elaboró un histograma para la escala de grises en el caso de la imagen.
