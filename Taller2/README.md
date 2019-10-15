@@ -25,8 +25,9 @@ Implementar al menos 6 ilusiones de tres tipos distintos (paradójicas, geométr
 | circle_expands     | Movimiento  | https://en.wikipedia.org/wiki/Filling-in         |                -                          |               -             |
 | troxler_fading     | Desvanecido | https://en.wikipedia.org/wiki/Troxler%27s_fading | Con el mouse se puede variar la velocidad |               -             |
 | opacity_illusion_1 | Scrollbar   |                                                  | Usando la barra se pone en evidencia la ilusión.| https://processing.org/examples/scrollbar.html|
-|                    |             |                                                  |                                           |                             |
-|                    |             |                                                  |                                           |                             |
+| ilusion_move       | Psycologica |                                                  | Mueve con el mouse las lineas que pasan en la imagen|                      |
+|ilusion_movimiento_1| Movimiento  |                                                  |                                           |                             |
+|ilusion_squ	     | Otros       |						      | Hace click para ocultar los recuadros	  |				|
 
 2. Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar:
 
