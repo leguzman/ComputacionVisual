@@ -1,4 +1,4 @@
-# Taller 2 - ilusiones visuales
+# Taller 3 - Rasterización
 
 ## Propósito
 
@@ -18,19 +18,3 @@ Implementar al menos 6 ilusiones de tres tipos distintos (paradójicas, geométr
 | Daniel Caita         | [dacaitac](https://github.com/dacaitac)  |
 | Andrés Felipe Forero | [afforeroc](https://github.com/afforeroc)|
 
-## Discusión
-
-| Ilusión            | Categoria   | Referencia                                       | Tipo de interactividad (si aplica)        | URL código base (si aplica) |
-|--------------------|------------ |--------------------------------------------------|-------------------------------------------|-----------------------------|
-| circle_expands     | Movimiento  | https://en.wikipedia.org/wiki/Filling-in         |                -                          |               -             |
-| troxler_fading     | Desvanecido | https://en.wikipedia.org/wiki/Troxler%27s_fading | Con el mouse se puede variar la velocidad |               -             |
-| opacity_illusion_1 | Scrollbar   |                                                  | Usando la barra se pone en evidencia la ilusión.| https://processing.org/examples/scrollbar.html|
-| ilusion_move       | Psycologica |                                                  | Mueve con el mouse las lineas que pasan en la imagen|                      |
-|ilusion_movimiento_1| Movimiento  |                                                  |                                           |                             |
-|ilusion_squ	     | Otros       |						      | Hace click para ocultar los recuadros	  |				|
-
-2. Describa brevememente las referencias estudiadas y los posibles temas en los que le gustaría profundizar:
-
-## Entrega
-
-* Plazo para hacer _push_ del repositorio a github: ~~6/10/19~~ 14/10/19 a las 24h.
